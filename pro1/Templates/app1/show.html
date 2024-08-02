@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Title</title>
+{% endblock %}
+{% block content %}
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Email_id</th>
+        <th>Department</th>
+        <th>Date_of_Joining</th>
+        <th>Status</th>
+        <th>Project_domain</th>
+        <th> Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.company}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.department}}</td>
+        <td>{{i.date_of_joining}}</td>
+        <td>{{i.status}}</td>
+        <td>{{i.project_Domain}}</td>
+        <td>
+            <a href="/a1/uv/{{i.id}}/"><button class="btn btn-warning">Update</button></a>
+            <a href="/a1/dv/{{i.id}}/"><button class="btn btn-success">Delete</button></a>
+        </td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
+{% endblock %}
